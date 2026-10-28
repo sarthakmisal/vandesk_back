@@ -5,9 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 5500;
 
 app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/{*path}", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/api/health", (req, res) => {
+  res.json({ message: "Server is running" });
 });
 
 if (require.main === module) {

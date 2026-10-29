@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5500;
 app.use(express.static(path.join(__dirname, "public")));
 app.get("/api/health", (req, res) => {
-  res.json({ message: "Server is running" });
+  res.json({ message: "Servers is running" });
 });
 app.get(/^\/(?!api\/).*/, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));

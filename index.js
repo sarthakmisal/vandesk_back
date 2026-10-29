@@ -7,6 +7,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/api/health", (req, res) => {
   res.json({ message: "Server is running" });
 });
+app.get(/^\/(?!api\/).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 if (require.main === module) {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

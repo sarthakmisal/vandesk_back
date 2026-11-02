@@ -1,1 +1,0 @@
-import"./chunk-DtFCBMTe.js";import{n as E,r as _}from"./main-BGKYB4WG.js";export{_ as iosTransitionAnimation};

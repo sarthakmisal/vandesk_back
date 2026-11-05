@@ -1,0 +1,1 @@
+var t=()=>Number(new Intl.DateTimeFormat(`en-GB`,{timeZone:`Asia/Kolkata`,hour:`2-digit`,hourCycle:`h23`}).format(new Date))<12?`pickup`:`drop`;export{t};

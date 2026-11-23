@@ -1,24 +1,32 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vandesk-backend",
+  "version": "2.0.0",
+  "description": "VanDesk API: Express + PostgreSQL. Also serves the Ionic build from public/.",
   "main": "index.js",
+  "private": true,
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "db:reset": "node -e \"require('fs').rmSync('data',{recursive:true,force:true});console.log('Local dev database removed')\"",
+    "test": "node --test \"test/*.test.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sarthakmisal/vandesk_back.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/sarthakmisal/vandesk_back/issues"
-  },
-  "homepage": "https://github.com/sarthakmisal/vandesk_back#readme",
   "dependencies": {
-    "express": "^5.3.0"
+    "compression": "^1.8.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.0",
+    "pg": "^8.16.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0"
   }
 }

@@ -1,0 +1,1 @@
+{"level":"info","message":{"method":"GET","response":{"code":"ENOENT","message":"ENOENT: no such file or directory, stat 'C:\\Users\\HP\\Desktop\\jivansir\\backend\\public\\app\\index.html'","success":false},"route":"/"},"timestamp":"2026-11-25T14:53:32.037Z"}

@@ -30,7 +30,7 @@ Notes: with `DATABASE_URL` set, the app does not create tables or demo data itse
 ## Production (Vercel + Neon)
 1. Run the two SQL files on the production database (as above).
 2. In Vercel set `DATABASE_URL`, `AUTH_SECRET` (16+ chars), `CRON_SECRET`, `SMTP_*`, `MAIL_FROM` (production emails the sign-in code; there is no on-screen code).
-3. Frontend: `npm run build:back` in the `vandesk` app project, then deploy. `vercel.json` schedules the three daily jobs (dues, reminders, retention).
+3. Frontend: `npm run build:back` in the `vandesk` app project, then **commit `public/`** (it is not git-ignored any more; Vercel has no frontend build step), then deploy. The mobile app's `apiUrl` becomes `https://<your-project>.vercel.app/api`. `vercel.json` schedules the three daily jobs (dues, reminders, retention).
 
 ## Admin (VanDesk team)
 The admin sets everything up; drivers run the day. All under `/api/admin/*` (role `admin` only, audited):
